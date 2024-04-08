@@ -1,0 +1,94 @@
+<rdf:RDF
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+xmlns:owl="http://www.w3.org/2002/07/owl#"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:mechanical-engineerings="http://example.org/mechanical-engineerings">
+
+<!-- OWL Header Example -->
+<owl:Ontology rdf:about="http://www.example.com/mechanical-engineerings">
+<dc:title> Mechanical Engineering Ontology</dc:title>
+<dc:description>A Mechanical Engineering ontology </dc:description>
+</owl:Ontology>
+
+<!-- Define the optimizesQualityIn property -->
+<owl:ObjectProperty rdf:about="http://www.example.com/mechanical-engineerings#optimizesQualityIn"/>
+
+<!-- Classes -->
+<owl:Class rdf:about="http://example.org/mechanical-engineerings#MechanicalEngineering">
+<rdfs:label>The mechanical engineering type</rdfs:label>
+<rdfs:comment>The class of all mechanical engineering.</rdfs:comment>
+</owl:Class>
+
+<!-- OWL Subclass Definition - EngineeringDesign -->
+<owl:Class rdf:about="http://example.org/mechanical-engineerings#EngineeringDesign">
+<rdfs:subClassOf rdf:resource="http://example.org/mechanical-engineerings#MechanicalEngineering"/>
+<rdfs:label>The engineering design type</rdfs:label>
+<rdfs:comment>The class of all engineering design.</rdfs:comment>
+</owl:Class>
+
+<!-- OWL Subclass Definition - KnowledgeDiscovery -->
+<owl:Class rdf:about="http://example.org/mechanical-engineerings#KnowledgeDiscovery">
+<rdfs:subClassOf rdf:resource="http://example.org/mechanical-engineerings#MechanicalEngineering"/>
+<rdfs:label>The knowledge discovery type</rdfs:label>
+<rdfs:comment>The class of all knowledge discovery.</rdfs:comment>
+</owl:Class>
+
+<!-- OWL Subclass Definition - AutomotiveDesignl -->
+<owl:Class rdf:about="http://example.org/mechanical-engineerings#AutomotiveDesign">
+<rdfs:subClassOf rdf:resource="http://example.org/mechanical-engineerings#MechanicalEngineering"/>
+<rdfs:label>The automotive design type</rdfs:label>
+<rdfs:comment>The class of all automotive design.</rdfs:comment>
+</owl:Class>
+
+<!-- OWL Subclass Definition - QualityControl -->
+<owl:Class rdf:about="http://example.org/mechanical-engineerings#QualityControl">
+<rdfs:subClassOf rdf:resource="http://example.org/mechanical-engineerings#MechanicalEngineering"/>
+<rdfs:label>The quality control type</rdfs:label>
+<rdfs:comment>The class of all quality control.</rdfs:comment>
+</owl:Class>
+
+<!-- OWL Subclass Definition - EducationAndTraining -->
+<owl:Class rdf:about="http://example.org/mechanical-engineerings#EducationAndTraining">
+<rdfs:subClassOf rdf:resource="http://example.org/mechanical-engineerings#MechanicalEngineering"/>
+<rdfs:label>The education and training type</rdfs:label>
+<rdfs:comment>The class of all education and training.</rdfs:comment>
+</owl:Class>
+
+<!-- OWL Subclass of Subclass Definition - Simulation -->
+<owl:Class rdf:about="http://example.org/mechanical-engineerings#Simulation">
+<rdfs:subClassOf rdf:resource="http://example.org/mechanical-engineerings#EngineeringDesign"/>
+<rdfs:label>The simulation type</rdfs:label>
+<rdfs:comment>The class of all simulation.</rdfs:comment>
+</owl:Class>
+
+<!-- OWL Subclass of Subclass Definition - DataIntegration -->
+<owl:Class rdf:about="http://example.org/mechanical-engineerings#DataIntegration">
+<rdfs:subClassOf rdf:resource="http://example.org/mechanical-engineerings#KnowledgeDiscovery"/>
+<rdfs:label>The data integration type</rdfs:label>
+<rdfs:comment>The class of all data integration.</rdfs:comment>
+</owl:Class>
+
+<!-- OWL Subclass of Subclass Definition - SemanticSearch -->
+<owl:Class rdf:about="http://example.org/mechanical-engineerings#SemanticSearch">
+<rdfs:subClassOf rdf:resource="http://example.org/mechanical-engineerings#KnowledgeDiscovery"/>
+<rdfs:label>The semantic search type</rdfs:label>
+<rdfs:comment>The class of all semantic search.</rdfs:comment>
+</owl:Class>
+
+<!-- OWL Subclass of Subclass Definition - QualityParameter -->
+<owl:Class rdf:about="http://example.org/mechanical-engineerings#QualityParameter">
+<rdfs:subClassOf rdf:resource="http://example.org/mechanical-engineerings#QualityControl"/>
+<rdfs:label>The quality parameter type</rdfs:label>
+<rdfs:comment>The class of all quality parameter.</rdfs:comment>
+</owl:Class>
+
+<!-- Define the Simulation Pizza class instance -->
+<rdf:Description rdf:about="http://www.example.com/mechanical-engineerings#Simulation">
+<!-- Simulation is an individual (instance) of the EngineeringDesign class -->
+<rdf:type rdf:resource="http://example.org/mechanical-engineerings#EngineeringDesign"/>
+<!-- The Simulation optimizes quality in Quality Parameter -->
+<mechanical-engineerings:optimizesQualityIn rdf:resource="http://www.example.com/mechanical-engineerings#QualityParameter"/>
+</rdf:Description>
+
+</rdf:RDF>
